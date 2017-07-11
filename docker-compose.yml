@@ -1,0 +1,12 @@
+version: '2'
+services:
+  nginx:
+    build: ./nginx
+    ports:
+     - "80:80"
+    links:
+     - "oauth"
+    volumes:
+     - /var/log/nginx:/var/log/nginx     
+  oauth:
+    build: ./oauth
